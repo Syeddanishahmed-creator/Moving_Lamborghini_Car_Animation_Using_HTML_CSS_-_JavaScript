@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden;
+}
+
+.sky {
+height: 100vh;
+width: 100%;
+background-image: url(./assets/background.jpg);
+background-repeat: no-repeat;
+position: absolute;
+}
+
+.trees {
+    height: 100vh;
+    width: 100%;
+    background-image: url(./assets/trees.png);
+    background-size: cover;
+    position: absolute;
+    top: -144px;
+}
+
+.track {
+    height: 60vh;
+    width: 800vw;
+    background-image: url(./assets/track.png);
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 70vh;
+    animation: carMove linear 13s infinite;
+}
+
+.car {
+    height: 100px;
+    width: 380px;
+    background-image: url(./assets/car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 444px;
+    bottom: 30vh;
+    animation: shake linear .3s infinite;
+
+}
+
+.wheel1 img{
+    width: 77px;
+    position: relative;
+    top: 42px;
+    left: 42px;
+    animation: wheelRotation linear .16s infinite;
+}
+
+.wheel2 img{
+    width: 77px;
+    position: relative;
+    top: -39px;
+    left: 235px;    
+    animation: wheelRotation linear .16s infinite;
+
+}
+
+@keyframes wheelRotation
+{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes carMove
+{
+    100%{
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes shake
+{
+    0%{
+        transform: translateY(-5px);
+    }
+    
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+
+/* Stylish Button Styling */
+button {
+    background: linear-gradient(45deg, #ff6b6b, #f9ca24); /* Gradient background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Adjusted padding for smaller size */
+    font-size: 16px; /* Reduced text size */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Slightly smaller border radius */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: inline-block; /* Ensure it remains inline and visible */
+    margin: 20px; /* Add some margin for spacing */
+    text-align: center;
+    position: relative; /* Set relative position */
+    z-index: 100; /* Higher z-index to bring button on top */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Button hover effect with shadow and slight scale */
+button:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* Button active effect (when clicked) */
+button:active {
+    transform: scale(0.95); /* Slight shrink on click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Lighter shadow on click */
+}
+
+
